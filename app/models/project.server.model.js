@@ -57,6 +57,9 @@ var ProjectSchema = new Schema({
     },
     projectType: {
         type: String
+    },
+    lastUpdatedBy: {
+        type: String
     }
 });
 

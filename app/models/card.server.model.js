@@ -28,7 +28,7 @@ var CardSchema = new Schema({
         type: Schema.ObjectId,
         ref: 'Project'
     },
-    lastUpdate: {
+    lastUpdated: {
         type: Date,
         default: Date.now
     },
@@ -62,6 +62,9 @@ var CardSchema = new Schema({
         type: String
     },
     documentPath: {
+        type: String
+    },
+    lastUpdatedBy: {
         type: String
     }
 });

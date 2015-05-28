@@ -7,13 +7,13 @@ var mongoose = require('mongoose'),
 	Schema = mongoose.Schema;
 
 /**
- * Resource Schema
+ * Task Schema
  */
-var ResourceSchema = new Schema({
+var TaskSchema = new Schema({
 	name: {
 		type: String,
 		default: '',
-		required: 'Please fill Resource name',
+		required: 'Please fill Task name',
 		trim: true
 	},
 	created: {
@@ -24,20 +24,21 @@ var ResourceSchema = new Schema({
 		type: Schema.ObjectId,
 		ref: 'User'
 	},
-    resourceType: {
-        type: String
-    },
-    project: {
-        type: Schema.ObjectId,
-        ref: 'Project'
-    },
     lastUpdatedBy: {
         type: String
     },
-    lastUpdatedDate: {
+    lastUpdated: {
         type: Date,
         default: Date.now
+    },
+    resource: {
+        type: Schema.ObjectId,
+        ref: 'Resource'
+    },
+    userstory: {
+        type: Schema.ObjectId,
+        ref: 'Card'
     }
 });
 
-mongoose.model('Resource', ResourceSchema);
+mongoose.model('Task', TaskSchema);
