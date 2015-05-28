@@ -1,0 +1,63 @@
+<section class="row" data-ng-controller="AuthenticationController">
+    <div class="container-fluid" style="margin-top: 100px">
+        <section class="container">
+            <div class="container-page">
+                <div class="col-md-6">
+                    <h3 class="dark-grey">Registration</h3>
+
+                    <div data-ng-show="error" class="text-center text-danger">
+                        <strong data-ng-bind="error"></strong>
+                    </div>
+                    <div class="form-group col-lg-12">
+                        <label for="firstName">First Name</label>
+                        <input type="text" required id="firstName" name="firstName" class="form-control" data-ng-model="credentials.firstName" placeholder="First Name">
+                    </div>
+                    <div class="form-group col-lg-12">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" class="form-control" data-ng-model="credentials.lastName" placeholder="Last Name">
+                    </div>
+
+                    <div class="form-group col-lg-12">
+                        <label>Email Address</label>
+                        <input type="" name="" class="form-control" id="email" value="" data-ng-model="credentials.email" placeholder="email address">
+                    </div>
+
+                    <div class="form-group col-lg-12">
+                        <label>Username</label>
+                        <input type="" name="" class="form-control" id="name" value="" data-ng-model="credentials.username" placeholder="username">
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label>Password</label>
+                        <input type="password" name="" class="form-control" id="password" value="" data-ng-model="credentials.password" placeholder="password">
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label>Re-enter Password</label>
+                        <input type="password" name="" class="form-control" id="repeatPassword" value="" placeholder="re-enter password">
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <h3 class="dark-grey">Terms and Conditions</h3>
+                    <p>
+                        By clicking on "Register" you agree to The Company's' Terms and Conditions
+                    </p>
+                    <p>
+                        While rare, prices are subject to change based on exchange rate fluctuations -
+                        should such a fluctuation happen, we may request an additional payment. You have the option to request a full refund or to pay the new price. (Paragraph 13.5.8)
+                    </p>
+                    <p>
+                        Should there be an error in the description or pricing of a product, we will provide you with a full refund (Paragraph 13.5.6)
+                    </p>
+                    <p>
+                        Acceptance of an order by us is dependent on our suppliers ability to provide the product. (Paragraph 13.5.6)
+                    </p>
+
+                    <button type="submit" class="btn btn-primary" ng-click="signup()">Register</button>
+                    <a href="#!/singin">Sign In</a>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
