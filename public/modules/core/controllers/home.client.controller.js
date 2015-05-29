@@ -43,8 +43,8 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
             var kanbanCol = $('.panel-body');
             kanbanCol.css('max-height', (window.innerHeight - 150) + 'px');
 
-            var kanbanColCount = parseInt(kanbanCol.length);
-            $('.container-fluid').css('min-width', (kanbanColCount * 350) + 'px');
+            //var kanbanColCount = parseInt(kanbanCol.length);
+            //$('.container-fluid').css('min-width', (kanbanColCount * 350) + 'px');
 
             //draggableInit();
 

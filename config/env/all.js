@@ -21,7 +21,6 @@ module.exports = {
 			js: [
                 'public/lib/jquery/dist/jquery.js',
                 'public/lib/jquery-ui/jquery-ui.min.js',
-                'public/lib/jquery/dist/jquery.js',
                 'public/lib/moment/moment.js',
 				'public/lib/angular/angular.js',
                 'public/lib/angular-aria.min.js',
