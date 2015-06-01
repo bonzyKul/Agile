@@ -18,4 +18,4 @@ var CardController = function ($scope) {
     });
 
 };
-mpkModule.controller('CardController', CardController);
+angular.module('core').controller('CardController', CardController);

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('core').factory('kanbanRepository', function (cloudService, cryptoService) {
+angular.module('core').factory('kanbanRepository', function () {
     return {
         kanbansByName : {},
         lastUsed : '',
@@ -61,76 +61,76 @@ angular.module('core').factory('kanbanRepository', function (cloudService, crypt
         setLastUsed : function(kanbanName){
             this.lastUsed = kanbanName;
             return this.lastUsed;
-        },
+        }
 
-        getTheme: function(){
-            return this.theme;
-        },
-
-        setTheme: function(theme){
-            this.theme = theme;
-            this.save();
-            return this.theme;
-        },
+        //getTheme: function(){
+        //    return this.theme;
+        //},
+        //
+        //setTheme: function(theme){
+        //    this.theme = theme;
+        //    this.save();
+        //    return this.theme;
+        //},
 
         /**
          * returns the Promise from the chained calls (just in case I freaking forget)
          */
-        upload: function(){
-            return cloudService.uploadKanban(this.prepareSerializedKanbans());
-        },
-
-        setLastUpdated: function(updated){
-            this.lastUpdated = updated;
-            return this;
-        },
-
-        getLastUpdated: function(){
-            return this.lastUpdated;
-        },
-
-        download: function(){
-            return cloudService.downloadKanban();
-        },
-
-        saveDownloadedKanban: function(kanban, lastUpdated){
-            if (typeof(kanban) == 'string'){
-                try {
-                    kanban = cryptoService.decrypt(kanban, cloudService.settings.encryptionKey);
-                }catch (ex){
-                    console.debug(ex);
-                    return {success: false, message: "Looks like Kanban saved in the cloud was persisted with different encryption key. You'll need to use old key to download your Kanban. Set it up in the Cloud Setup menu."};
-                }
-            }
-            var fromCloud = angular.fromJson(kanban);
-            this.kanbansByName = fromCloud.kanbans;
-            this.lastUsed = fromCloud.lastUsed;
-            this.theme = fromCloud.theme;
-            this.lastUpdated = lastUpdated;
-            this.save();
-
-            return {success: true};
-        },
-
-        renameLastUsedTo: function(newName){
-            var lastUsed = this.getLastUsed();
-            delete this.kanbansByName[lastUsed.name];
-            lastUsed.name = newName;
-
-            this.kanbansByName[newName] = lastUsed;
-            this.lastUsed = newName;
-            return true;
-        },
-
-        import: function(kanbans){
-            var self = this;
-            angular.forEach(Object.keys(kanbans), function(kanbanName){
-                self.kanbansByName[kanbanName] = kanbans[kanbanName];
-            });
-            var names = Object.keys(kanbans);
-            this.setLastUsed(kanbans[names[0]]);
-            this.save();
-        }
+        //upload: function(){
+        //    return cloudService.uploadKanban(this.prepareSerializedKanbans());
+        //},
+        //
+        //setLastUpdated: function(updated){
+        //    this.lastUpdated = updated;
+        //    return this;
+        //},
+        //
+        //getLastUpdated: function(){
+        //    return this.lastUpdated;
+        //},
+        //
+        //download: function(){
+        //    return cloudService.downloadKanban();
+        //},
+        //
+        //saveDownloadedKanban: function(kanban, lastUpdated){
+        //    if (typeof(kanban) == 'string'){
+        //        try {
+        //            kanban = cryptoService.decrypt(kanban, cloudService.settings.encryptionKey);
+        //        }catch (ex){
+        //            console.debug(ex);
+        //            return {success: false, message: "Looks like Kanban saved in the cloud was persisted with different encryption key. You'll need to use old key to download your Kanban. Set it up in the Cloud Setup menu."};
+        //        }
+        //    }
+        //    var fromCloud = angular.fromJson(kanban);
+        //    this.kanbansByName = fromCloud.kanbans;
+        //    this.lastUsed = fromCloud.lastUsed;
+        //    this.theme = fromCloud.theme;
+        //    this.lastUpdated = lastUpdated;
+        //    this.save();
+        //
+        //    return {success: true};
+        //},
+        //
+        //renameLastUsedTo: function(newName){
+        //    var lastUsed = this.getLastUsed();
+        //    delete this.kanbansByName[lastUsed.name];
+        //    lastUsed.name = newName;
+        //
+        //    this.kanbansByName[newName] = lastUsed;
+        //    this.lastUsed = newName;
+        //    return true;
+        //},
+        //
+        //import: function(kanbans){
+        //    var self = this;
+        //    angular.forEach(Object.keys(kanbans), function(kanbanName){
+        //        self.kanbansByName[kanbanName] = kanbans[kanbanName];
+        //    });
+        //    var names = Object.keys(kanbans);
+        //    this.setLastUsed(kanbans[names[0]]);
+        //    this.save();
+        //}
 
     };
 });

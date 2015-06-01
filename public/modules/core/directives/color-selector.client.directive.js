@@ -12,7 +12,7 @@ angular.module('core').directive('colorSelector', function(){
         '</div>\n',
         link: function(scope) {
             if (scope.model === undefined || scope.model === ''){
-                scope.model = scope.options[0];
+                //scope.model = scope.options[0];
             }
 
             scope.selectColor = function(color){

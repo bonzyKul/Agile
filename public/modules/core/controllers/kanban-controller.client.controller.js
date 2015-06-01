@@ -2,6 +2,24 @@
 
 angular.module('core').controller('KanbanController', function KanbanController($scope, kanbanManipulator) {
 
+    $scope.$on('NewKanbanAdded', function(){
+        $scope.showNewKanban = false;
+        $scope.kanban = kanbanRepository.getLastUsed();
+        $scope.allKanbans = Object.keys(kanbanRepository.all());
+        $scope.selectedToOpen = $scope.kanban.name;
+        $location.path('/');
+    });
+
+    $scope.$on('ColumnsChanged', function(){
+        $scope.columnWidth = calculateColumnWidth($scope.kanban.columns.length);
+    });
+
+    function calculateColumnWidth(numberOfColumns){
+        return Math.floor((100 / numberOfColumns) * 100) / 100;
+    }
+
+
+
     $scope.addNewCard = function(column){
         $scope.$broadcast('AddNewCard', column);
     };

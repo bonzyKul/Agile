@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('core').directive('modal', [
+angular.module('core').directive('mpkModal', [
 	function() {
 		return {
 			template: '<div class="modal fade">' +

@@ -38,6 +38,8 @@ var NewKanbanController = function ($scope, kanbanRepository, kanbanManipulator)
         $scope.$emit('NewKanbanAdded');
         $scope.showNewKanban = false;
 
+
+
         return true;
     };
 

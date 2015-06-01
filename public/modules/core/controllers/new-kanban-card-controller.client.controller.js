@@ -1,7 +1,7 @@
 'use strict';
 
 var NewKanbanCardController = function ($scope, kanbanManipulator) {
-    $scope.master = {title: '', details: '', cardColor: $scope.colorOptions[0]};
+    $scope.master = {title: '', details: '', cardColor: 'FFB5B5'};
     $scope.newCard = {};
 
     $scope.$on('AddNewCard', function(e, column){
