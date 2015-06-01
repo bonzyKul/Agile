@@ -1,154 +1,211 @@
-<section data-ng-controller="HomeController" ng-init="kanbanInit();">
-    <div class="container-fluid ng-cloak" style="margin-top: 25px">
-        <div id="sortableKanbanBoards" class="row">
-
-            <!--sütun başlangıç-->
-            <div class="panel panel-primary kanban-col" data-drop="true"  ng-model='list1' data-jqyoui-options="{accept:'.kanban-entry:not([ng-model=list1])'}" jqyoui-droppable="{multiple:true}">
-                <div class="panel-heading">
-                    TODO
-                    <i class="fa fa-2x fa-plus-circle pull-right"></i>
-                </div>
-                <div class="panel-body">
-                    <div id="TODO" class="kanban-centered">
-
-                        <!--<div class="caption">-->
-                            <!--<div class="btn btn-info btn-draggable" ng-repeat="item in list3" ng-show="item.title" data-drag="{{item.drag}}" data-jqyoui-options="{revert: 'invalid'}" ng-model="list3" jqyoui-draggable="{index: {{$index}},animate:true}">{{item.title}}</div>-->
-                        <!--</div>-->
-
-                        <div class="kanban-entry grab" ng-repeat="item in list1" data-drag="{{item.drag}}" data-jqyoui-options="{revert: 'invalid'}" ng-model="list1" jqyoui-draggable="{index: {{$index}},animate:true}">
-                            <div class="kanban-entry-inner">
-                                <div class="kanban-label">
-                                    <h2><a href="#">{{item.title}}</a> <span>posted a status update</span></h2>
-                                    <p>Tolerably earnestly middleton extremely distrusts she boy now not. Add and offered prepare how cordial two promise. Greatly who affixed suppose but enquire compact prepare all put. Added forth chief trees but rooms think may.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--<article class="kanban-entry grab" id="item2" draggable="true">-->
-                            <!--<div class="kanban-entry-inner">-->
-                                <!--<div class="kanban-label">-->
-                                    <!--<h2><a href="#">Job Meeting</a></h2>-->
-                                    <!--<p>You have a meeting at <strong>Laborator Office</strong> Today.</p>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                        <!--</article>-->
-
-                        <!--<article class="kanban-entry grab" id="item3" draggable="true">-->
-                            <!--<div class="kanban-entry-inner">-->
-                                <!--<div class="kanban-label">-->
-                                    <!--<h2><a href="#">Arlind Nushi</a> <span>checked in at</span> <a href="#">Laborator</a></h2>-->
-
-                                    <!--<blockquote>Great place, feeling like in home.</blockquote>-->
-
-                                    <!--<div id="sample-checkin" class="map-checkin" style="height: 170px; width: 100%; position: relative; background-color: rgb(229, 227, 223); overflow: hidden; -webkit-transform: translateZ(0);"><div class="gm-style" style="position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%; z-index: 0;"><div style="position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%; z-index: 0;"><div style="position: absolute; left: 0px; top: 0px; z-index: 1; width: 100%; cursor: url(http://maps.gstatic.com/mapfiles/openhand_8_8.cur) 8 8, default; -webkit-transform-origin: 0px 0px; -webkit-transform: matrix(1, 0, 0, 1, 0, 0);"><div style="-webkit-transform: translateZ(0); position: absolute; left: 0px; top: 0px; width: 100%; z-index: 200;"><div style="-webkit-transform: translateZ(0); position: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;"></div></div><div style="-webkit-transform: translateZ(0); position: absolute; left: 0px; top: 0px; width: 100%; z-index: 201;"><div style="-webkit-transform: translateZ(0); position: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;"></div><div style="-webkit-transform: translateZ(0); position: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: -1;"><div style="position: absolute; left: 0px; top: 0px; z-index: 1;"><div style="width: 256px; height: 256px; overflow: hidden; -webkit-transform: translateZ(0); position: absolute; left: 72px; top: -176px;"><canvas draggable="false" height="256" width="256" style="-webkit-user-select: none; position: absolute; left: 0px; top: 0px; height: 256px; width: 256px;"></canvas></div><div style="width: 256px; height: 256px; overflow: hidden; -webkit-transform: translateZ(0); position: absolute; left: 72px; top: 80px;"></div><div style="width: 256px; height: 256px; overflow: hidden; -webkit-transform: translateZ(0); position: absolute; left: -184px; top: -176px;"></div><div style="width: 256px; height: 256px; overflow: hidden; -webkit-transform: translateZ(0); position: absolute; left: -184px; top: 80px;"></div><div style="width: 256px; height: 256px; overflow: hidden; -webkit-transform: translateZ(0); position: absolute; left: 328px; top: -176px;"></div><div style="width: 256px; height: 256px; overflow: hidden; -webkit-transform: translateZ(0); position: absolute; left: 328px; top: 80px;"></div></div></div></div></div><div style="-webkit-transform: translateZ(0); position: absolute; left: 0px; top: 0px; width: 100%; z-index: 202;"><div style="-webkit-transform: translateZ(0); position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;"></div><div style="-webkit-transform: translateZ(0); position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;"></div><div style="-webkit-transform: translateZ(0); position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;"></div></div><div style="-webkit-transform: translateZ(0); position: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; left: 0px; top: 0px; z-index: 1;"><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0); position: absolute; left: 72px; top: -176px;"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0); position: absolute; left: 72px; top: 80px;"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0); position: absolute; left: -184px; top: -176px;"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0); position: absolute; left: -184px; top: 80px;"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0); position: absolute; left: 328px; top: -176px;"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0); position: absolute; left: 328px; top: 80px;"></div></div></div></div><div style="position: absolute; z-index: 0; left: 0px; top: 0px;"><div style="overflow: hidden; width: 431px; height: 170px;"><img src="http://maps.googleapis.com/maps/api/js/StaticMapService.GetMapImage?1m2&1i701363&2i1636267&2e1&3u14&4m2&1u431&2u170&5m4&1e0&5spt-BR&6sus&10b1&token=8503" style="width: 421px; height: 160px;"></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; left: 0px; top: 0px; z-index: 1;"><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0); position: absolute; left: 72px; top: -176px; opacity: 1; transition: opacity 200ms ease-out; -webkit-transition: opacity 200ms ease-out;"><img src="http://mt0.googleapis.com/vt?lyrs=m@248313357&src=apiv3&hl=pt-BR&x=2740&y=6391&z=14&style=47,37%7Csmartmaps" draggable="false" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; -webkit-transform: translateZ(0);"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0); position: absolute; left: 72px; top: 80px; opacity: 1; transition: opacity 200ms ease-out; -webkit-transition: opacity 200ms ease-out;"><img src="http://mt0.googleapis.com/vt?lyrs=m@248254527&src=apiv3&hl=pt-BR&x=2740&y=6392&z=14&style=47,37%7Csmartmaps" draggable="false" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; -webkit-transform: translateZ(0);"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0); position: absolute; left: -184px; top: -176px; opacity: 1; transition: opacity 200ms ease-out; -webkit-transition: opacity 200ms ease-out;"><img src="http://mt1.googleapis.com/vt?lyrs=m@248282439&src=apiv3&hl=pt-BR&x=2739&y=6391&z=14&style=47,37%7Csmartmaps" draggable="false" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; -webkit-transform: translateZ(0);"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0); position: absolute; left: -184px; top: 80px; opacity: 1; transition: opacity 200ms ease-out; -webkit-transition: opacity 200ms ease-out;"><img src="http://mt1.googleapis.com/vt?lyrs=m@248011677&src=apiv3&hl=pt-BR&x=2739&y=6392&z=14&style=47,37%7Csmartmaps" draggable="false" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; -webkit-transform: translateZ(0);"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0); position: absolute; left: 328px; top: -176px; opacity: 1; transition: opacity 200ms ease-out; -webkit-transition: opacity 200ms ease-out;"><img src="http://mt1.googleapis.com/vt?lyrs=m@248301220&src=apiv3&hl=pt-BR&x=2741&y=6391&z=14&style=47,37%7Csmartmaps" draggable="false" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; -webkit-transform: translateZ(0);"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0); position: absolute; left: 328px; top: 80px; opacity: 1; transition: opacity 200ms ease-out; -webkit-transition: opacity 200ms ease-out;"><img src="http://mt1.googleapis.com/vt?lyrs=m@248301220&src=apiv3&hl=pt-BR&x=2741&y=6392&z=14&style=47,37%7Csmartmaps" draggable="false" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; -webkit-transform: translateZ(0);"></div></div></div></div></div><div style="margin-left: 5px; margin-right: 5px; z-index: 1000000; position: absolute; left: 0px; bottom: 0px;"><a target="_blank" href="http://maps.google.com/maps?ll=36.738888,-119.783013&z=14&t=m&hl=pt-BR&gl=US&mapclient=apiv3" title="Clique para ver esta área no Google Maps" style="position: static; overflow: visible; float: none; display: inline;"><div style="width: 62px; height: 26px; cursor: pointer;"><img src="http://maps.gstatic.com/mapfiles/api-3/images/google_white2.png" draggable="false" style="position: absolute; left: 0px; top: 0px; width: 62px; height: 26px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div></a></div><div class="gmnoprint" style="z-index: 1000001; position: absolute; right: 192px; bottom: 0px; width: 85px;"><div draggable="false" class="gm-style-cc" style="-webkit-user-select: none;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right;"><a style="color: rgb(68, 68, 68); text-decoration: none; cursor: pointer;">Dados do mapa</a><span style="display: none;">Dados cartográficos ©2014 Google</span></div></div></div><div style="background-color: white; padding: 15px 21px; border: 1px solid rgb(171, 171, 171); font-family: Roboto, Arial, sans-serif; color: rgb(34, 34, 34); -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px; box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px; z-index: 10000002; display: none; width: 256px; height: 118px; position: absolute; left: 61px; top: 5px;"><div style="padding: 0px 0px 10px; font-size: 16px;">Dados do mapa</div><div style="font-size: 13px;">Dados cartográficos ©2014 Google</div><div style="width: 13px; height: 13px; overflow: hidden; position: absolute; opacity: 0.7; right: 12px; top: 12px; z-index: 10000; cursor: pointer;"><img src="http://maps.gstatic.com/mapfiles/api-3/images/mapcnt3.png" draggable="false" style="position: absolute; left: -2px; top: -336px; width: 59px; height: 492px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div></div><div class="gmnoscreen" style="position: absolute; right: 0px; bottom: 0px;"><div style="font-family: Roboto, Arial, sans-serif; font-size: 11px; color: rgb(68, 68, 68); direction: ltr; text-align: right; background-color: rgb(245, 245, 245);">Dados cartográficos ©2014 Google</div></div><div class="gmnoprint gm-style-cc" draggable="false" style="z-index: 1000001; position: absolute; -webkit-user-select: none; right: 113px; bottom: 0px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right;"><a href="http://www.google.com/intl/pt-BR_US/help/terms_maps.html" target="_blank" style="text-decoration: none; cursor: pointer; color: rgb(68, 68, 68);">Termos de Uso</a></div></div><div draggable="false" class="gm-style-cc" style="-webkit-user-select: none; position: absolute; right: 0px; bottom: 0px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right;"><a target="_new" title="Informar erros no mapa ou nas imagens para o Google" href="http://maps.google.com/maps?ll=36.738888,-119.783013&z=14&t=m&hl=pt-BR&gl=US&mapclient=apiv3&skstate=action:mps_dialog$apiref:1&output=classic" style="font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); text-decoration: none; position: relative;">Informar erro no mapa</a></div></div><div class="gmnoprint" draggable="false" controlwidth="32" controlheight="84" style="margin: 5px; -webkit-user-select: none; position: absolute; left: 0px; top: 0px;"><div controlwidth="32" controlheight="40" style="cursor: url(http://maps.gstatic.com/mapfiles/openhand_8_8.cur) 8 8, default; position: absolute; left: 0px; top: 0px;"><div style="width: 32px; height: 40px; overflow: hidden; position: absolute; left: 0px; top: 0px;"><img src="http://maps.gstatic.com/mapfiles/api-3/images/cb_scout2.png" draggable="false" style="position: absolute; left: -9px; top: -102px; width: 1028px; height: 214px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div><div style="width: 32px; height: 40px; overflow: hidden; position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="http://maps.gstatic.com/mapfiles/api-3/images/cb_scout2.png" draggable="false" style="position: absolute; left: -107px; top: -102px; width: 1028px; height: 214px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div><div style="width: 32px; height: 40px; overflow: hidden; position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="http://maps.gstatic.com/mapfiles/api-3/images/cb_scout2.png" draggable="false" style="position: absolute; left: -58px; top: -102px; width: 1028px; height: 214px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div><div style="width: 32px; height: 40px; overflow: hidden; position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="http://maps.gstatic.com/mapfiles/api-3/images/cb_scout2.png" draggable="false" style="position: absolute; left: -205px; top: -102px; width: 1028px; height: 214px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div></div><div class="gmnoprint" controlwidth="0" controlheight="0" style="opacity: 0.6; display: none; position: absolute;"><div title="Girar o mapa em 90 graus" style="width: 22px; height: 22px; overflow: hidden; position: absolute; cursor: pointer;"><img src="http://maps.gstatic.com/mapfiles/api-3/images/mapcnt3.png" draggable="false" style="position: absolute; left: -38px; top: -360px; width: 59px; height: 492px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div></div><div class="gmnoprint" controlwidth="20" controlheight="39" style="position: absolute; left: 6px; top: 45px;"><div style="width: 20px; height: 39px; overflow: hidden; position: absolute;"><img src="http://maps.gstatic.com/mapfiles/api-3/images/mapcnt3.png" draggable="false" style="position: absolute; left: -39px; top: -401px; width: 59px; height: 492px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div><div title="Aumentar o zoom" style="position: absolute; left: 0px; top: 2px; width: 20px; height: 17px; cursor: pointer;"></div><div title="Diminuir o zoom" style="position: absolute; left: 0px; top: 19px; width: 20px; height: 17px; cursor: pointer;"></div></div></div><div class="gmnoprint" style="margin: 5px; z-index: 0; position: absolute; cursor: pointer; right: 0px; top: 0px;"><div class="gm-style-mtc" style="float: left;"><div draggable="false" title="Mostrar mapa de ruas" style="direction: ltr; overflow: hidden; text-align: center; position: relative; color: rgb(0, 0, 0); font-family: Roboto, Arial, sans-serif; -webkit-user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 1px 6px; border-bottom-left-radius: 2px; border-top-left-radius: 2px; -webkit-background-clip: padding-box; background-clip: padding-box; border: 1px solid rgba(0, 0, 0, 0.14902); -webkit-box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; min-width: 28px; font-weight: 500;">Mapa</div><div style="background-color: white; z-index: -1; padding-top: 2px; -webkit-background-clip: padding-box; background-clip: padding-box; border-width: 0px 1px 1px; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-right-color: rgba(0, 0, 0, 0.14902); border-bottom-color: rgba(0, 0, 0, 0.14902); border-left-color: rgba(0, 0, 0, 0.14902); -webkit-box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; position: absolute; left: 0px; top: 19px; text-align: left; display: none;"><div draggable="false" title="Mostrar mapa de ruas com terreno" style="color: rgb(0, 0, 0); font-family: Roboto, Arial, sans-serif; -webkit-user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 3px 8px 3px 5px; direction: ltr; text-align: left; white-space: nowrap;"><span role="checkbox" style="box-sizing: border-box; position: relative; line-height: 0; font-size: 0px; margin: 0px 5px 0px 0px; display: inline-block; background-color: rgb(255, 255, 255); border: 1px solid rgb(198, 198, 198); border-top-left-radius: 1px; border-top-right-radius: 1px; border-bottom-right-radius: 1px; border-bottom-left-radius: 1px; width: 13px; height: 13px; vertical-align: middle;"><div style="position: absolute; left: 1px; top: -2px; width: 13px; height: 11px; overflow: hidden; display: none;"><img src="http://maps.gstatic.com/mapfiles/mv/imgs8.png" draggable="false" style="position: absolute; left: -52px; top: -44px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; width: 68px; height: 67px;"></div></span><label style="vertical-align: middle; cursor: pointer;">Terreno</label></div></div></div><div class="gm-style-mtc" style="float: left;"><div draggable="false" title="Mostrar imagens de satélite" style="direction: ltr; overflow: hidden; text-align: center; position: relative; color: rgb(86, 86, 86); font-family: Roboto, Arial, sans-serif; -webkit-user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 1px 6px; border-bottom-right-radius: 2px; border-top-right-radius: 2px; -webkit-background-clip: padding-box; background-clip: padding-box; border-width: 1px 1px 1px 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-top-color: rgba(0, 0, 0, 0.14902); border-right-color: rgba(0, 0, 0, 0.14902); border-bottom-color: rgba(0, 0, 0, 0.14902); -webkit-box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; min-width: 36px;">Satélite</div><div style="background-color: white; z-index: -1; padding-top: 2px; -webkit-background-clip: padding-box; background-clip: padding-box; border-width: 0px 1px 1px; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-right-color: rgba(0, 0, 0, 0.14902); border-bottom-color: rgba(0, 0, 0, 0.14902); border-left-color: rgba(0, 0, 0, 0.14902); -webkit-box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; position: absolute; right: 0px; top: 19px; text-align: left; display: none;"><div draggable="false" title="Aumentar o zoom para a visualização de 45 graus" style="color: rgb(184, 184, 184); font-family: Roboto, Arial, sans-serif; -webkit-user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 3px 8px 3px 5px; direction: ltr; text-align: left; white-space: nowrap; display: none;"><span role="checkbox" style="box-sizing: border-box; position: relative; line-height: 0; font-size: 0px; margin: 0px 5px 0px 0px; display: inline-block; background-color: rgb(255, 255, 255); border: 1px solid rgb(241, 241, 241); border-top-left-radius: 1px; border-top-right-radius: 1px; border-bottom-right-radius: 1px; border-bottom-left-radius: 1px; width: 13px; height: 13px; vertical-align: middle;"><div style="position: absolute; left: 1px; top: -2px; width: 13px; height: 11px; overflow: hidden; display: none;"><img src="http://maps.gstatic.com/mapfiles/mv/imgs8.png" draggable="false" style="position: absolute; left: -52px; top: -44px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; width: 68px; height: 67px;"></div></span><label style="vertical-align: middle; cursor: pointer;">45°</label></div><div draggable="false" title="Mostrar imagens com nomes de rua" style="color: rgb(0, 0, 0); font-family: Roboto, Arial, sans-serif; -webkit-user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 3px 8px 3px 5px; direction: ltr; text-align: left; white-space: nowrap;"><span role="checkbox" style="box-sizing: border-box; position: relative; line-height: 0; font-size: 0px; margin: 0px 5px 0px 0px; display: inline-block; background-color: rgb(255, 255, 255); border: 1px solid rgb(198, 198, 198); border-top-left-radius: 1px; border-top-right-radius: 1px; border-bottom-right-radius: 1px; border-bottom-left-radius: 1px; width: 13px; height: 13px; vertical-align: middle;"><div style="position: absolute; left: 1px; top: -2px; width: 13px; height: 11px; overflow: hidden;"><img src="http://maps.gstatic.com/mapfiles/mv/imgs8.png" draggable="false" style="position: absolute; left: -52px; top: -44px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; width: 68px; height: 67px;"></div></span><label style="vertical-align: middle; cursor: pointer;">Marcadores</label></div></div></div></div></div></div>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                        <!--</article>-->
-
-                        <!--<article class="kanban-entry grab" id="item4" draggable="true">-->
-                            <!--<div class="kanban-entry-inner">-->
-                                <!--<div class="kanban-label">-->
-                                    <!--<h2><a href="#">Arber Nushi</a> <span>changed his</span> <a href="#">Profile Picture</a></h2>-->
-
-                                    <!--<blockquote>Pianoforte principles our unaffected not for astonished travelling are particular.</blockquote>-->
-
-                                    <!--<img src="http://themes.laborator.co/neon/assets/images/timeline-image-3.png" class="img-responsive img-rounded full-width">-->
-                                <!--</div>-->
-                            <!--</div>-->
-                        <!--</article>-->
-
+<div class="container-fluid" id="kanban" ng-controller="KanbanController">
+        <div id="columns">
+            <div style="width:{{columnWidth}}%;display: inline-block;" ng-repeat="column in kanban.columns" data-columnindex="{{$index}}" id="column{{$index}}">
+                <div class="column" style="background-color: {{column.settings.color}}">
+                    <div class="columnHeader">
+                        <a title="Column settings" ng-click="columnSettings(kanban, column)" ng-model="column" ng-hide="editing"><i class="glyphicon glyphicon-wrench"></i></a>
+                        <a title="Add card to column" class="pull-right" ng-click="addNewCard(column)" ng-hide="columnLimitsReached(column)"><i class="glyphicon glyphicon-plus"></i></a>
+                        <span>{{column.name}} ({{columnLimitsTextFor(column)}})</span>
                     </div>
-                </div>
-                <div class="panel-footer">
-                    <a href="#">Add a card...</a>
-                </div>
-            </div>
-            <!--sütun bitiş-->
-            <!--sütun başlangıç-->
-            <div class="panel panel-primary kanban-col" data-drop="true" ng-model='list2' data-jqyoui-options="{accept:'.kanban-entry:not([ng-model=list2])'}"  jqyoui-droppable="{multiple:true}">
-                <div class="panel-heading">
-                    DOING
-                    <i class="fa fa-2x fa-plus-circle pull-right"></i>
-                </div>
-                <div class="panel-body">
-                    <div id="DOING" class="kanban-centered">
-
-                        <div class="kanban-entry grab" ng-repeat="item in list2" data-drag="{{item.drag}}" data-jqyoui-options="{revert: 'invalid'}" ng-model="list2" jqyoui-draggable="{index: {{$index}},animate:true}">
-                            <div class="kanban-entry-inner">
-                                <div class="kanban-label">
-                                    <h2><a href="#">{{item.title}}</a> <span>posted a status update</span></h2>
-                                    <p>Tolerably earnestly middleton extremely distrusts she boy now not. Add and offered prepare how cordial two promise. Greatly who affixed suppose but enquire compact prepare all put. Added forth chief trees but rooms think may.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--<article class="kanban-entry grab" id="item6" draggable="true">-->
-                            <!--<div class="kanban-entry-inner">-->
-                                <!--<div class="kanban-label">-->
-                                    <!--<h2><a href="#">Job Meeting</a></h2>-->
-                                    <!--<p>You have a meeting at <strong>Laborator Office</strong> Today.</p>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                        <!--</article>-->
-
-                    </div>
-                </div>
-                <div class="panel-footer">
-                    <a href="#">Add a card...</a>
-                </div>
-            </div>
-            <!--sütun bitiş-->
-            <!--sütun başlangıç-->
-            <div class="panel panel-primary kanban-col" data-drop="true" ng-model='list3' data-jqyoui-options="{accept:'.kanban-entry:not([ng-model=list3])'}"  jqyoui-droppable="{multiple:true}">
-                <div class="panel-heading">
-                    DONE
-                    <!--<i class="fa fa-2x fa-plus-circle pull-right"></i>-->
-                    <i class="glyphicon glyphicon-remove pull-right"></i>
-                </div>
-                <div class="panel-body">
-                    <div id="DONE" class="kanban-centered">
-
-                        <div class="kanban-entry grab" ng-repeat="item in list3" data-drag="{{item.drag}}" data-jqyoui-options="{revert: 'invalid'}" ng-model="list3" jqyoui-draggable="{index: {{$index}},animate:true}">
-                            <div class="kanban-entry-inner">
-                                <div class="kanban-label">
-                                    <h2><a href="#">{{item.title}}</a> <span>posted a status update</span></h2>
-                                    <p>Tolerably earnestly middleton extremely distrusts she boy now not. Add and offered prepare how cordial two promise. Greatly who affixed suppose but enquire compact prepare all put. Added forth chief trees but rooms think may.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--<article class="kanban-entry grab" id="item6" draggable="true">-->
-                            <!--<div class="kanban-entry-inner">-->
-                                <!--<div class="kanban-label">-->
-                                    <!--<h2><a href="#">Job Meeting</a></h2>-->
-                                    <!--<p>You have a meeting at <strong>Laborator Office</strong> Today.</p>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                        <!--</article>-->
-
-                    </div>
-                </div>
-                <div class="panel-footer">
-                    <a href="#">Add a card...</a>
-                </div>
-            </div>
-            <!--sütun bitiş-->
-
-
-        </div>
-    </div>
-
-    <!-- Static Modal -->
-    <div class="modal modal-static fade" id="processing-modal" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="text-center">
-                        <i class="fa fa-refresh fa-5x fa-spin"></i>
-                        <h4>Processing...</h4>
-                    </div>
+                    <ul ng-class="sortableClassFor(column)" ui-sortable="{connectWith: '#kanban ul.cards'}" ng-model="column.cards" style="min-height:{{columnHeight}}px;max-height:{{columnHeight}}px;">
+                        <li class="card" ng-repeat="card in column.cards" style="background-color: #{{colorFor(card)}};">
+                            <a class="pull-right" ng-click="delete(card, column)"><i class="glyphicon glyphicon-remove"></i></a>
+                            <a class="pull-right" title="Archive" ng-click="archive(kanban, column, card)" ng-show="isLastColumn(column.name, kanban)"><i class="glyphicon glyphicon-folder-close"></i></a>
+                            <a ng-click="openCardDetails(card)"><span>{{card.name}}</span></a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
+        <div ng-controller="ColumnSettingsController">
+            <mpk-modal title="Column settings" visible="showColumnSettings">
+                <form  class="noMargin" name="columnSettings" ng-submit="update()">
+                    <div class="form-group">
+                        <label class="control-label" for="columnName">Column name</label>
+                        <div class="controls">
+                            <div>
+                                <input name="columnName" type="text" id="columnName" placeholder="Title on a card" ng-model="model.columnName" required class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="columnColor">Column color</label>
+                        <div class="controls">
+                            <div>
+                                <div class="col-md-3" style="padding-left: 0px;">
+                                    <input type="text" name="colorHex" value="Theme Default" class="form-control" ng-model="model.color"/>
+                                </div>
+                                <spectrum-colorpicker ng-model="model.color" options="{allowEmpty: true}" format="'hex'">
+                                </spectrum-colorpicker>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="columnLimit">Card limit for this column</label>
+                        <div class="controls row">
+                            <div class="col-md-2">
+                                <input name="columnLimit" type="number" ng-model="model.limit" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="form-group">
+                        <button type="button" class="btn btn-sm btn-success" ng-click="addColumn('left')"><i class="glyphicon glyphicon-arrow-left"></i> Add column to the left</button>
+                        <button type="button" class="btn btn-sm btn-success pull-right" ng-click="addColumn('right')">Add column to the right <i class="glyphicon glyphicon-arrow-right"></i></button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger pull-left" ng-hide="model.showWarning" ng-click="delete()">Delete column</button>
+                        <button type="button" class="btn btn-danger pull-left" ng-show="model.showWarning" ng-click="delete()" ng-disabled="model.deleteDisabled">Click again to delete this column <i class="glyphicon glyphicon-exclamation-sign"></i></button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </div>
+                </form>
+            </mpk-modal>
+        </div>
+        <div ng-controller="NewKanbanCardController">
+            <mpk-modal title="New card for column '{{kanbanColumnName}}'" visible="showNewCard">
+                <form class="noMargin" name="newCardForm" ng-submit="addNewCard(newCard)">
+                    <div class="form-group">
+                        <label class="control-label" for="newCardTitle">Kanban card title</label>
+                        <div>
+                            <input type="text" id="newCardTitle" placeholder="Title on a card" ng-model="newCard.title" required focus-me class="cardInputs form-control" name="cardTitle"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="newCardDetails">More details <small>(optional)</small></label>
+                        <div>
+                <textarea id="newCardDetails" ng-model="newCard.details" class="cardInputs form-control" rows="7">
+                </textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Card color</label>
+                    </div>
+                    <div class="form-group">
+                        <color-selector options="colorOptions" ng-model="newCard.cardColor" prefix="newCardColor" class="colorSelector" show-hex-code="true"/>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </div>
+                </form>
+            </mpk-modal>
+        </div>
+
+        <div ng-controller="CardController">
+            <mpk-modal title="Card details" visible="showCardDetails">
+                <form class="noMargin" name="cardDetails">
+                    <div class="form-group">
+                        <label class="control-label" for="cardTitle">Kanban card title</label>
+                        <div class="controls">
+                            <ng-form ng-submit="editingTitle = false">
+                                <div class="input-group">
+                                    <input name="cardTitle" type="text" id="cardTitle" placeholder="Title on a card" ng-model="card.name" required class="form-control" ng-disabled="!editingTitle" focus-me />
+                  <span class="input-group-btn">
+                    <a title="OK" class="btn btn-default" ng-click="editingTitle = false" ng-hide="!editingTitle"><i class="glyphicon glyphicon-ok"></i></a>
+                    <a title="Edit card title" class="btn btn-default" ng-click="editingTitle = true" ng-hide="editingTitle"><i class="glyphicon glyphicon-pencil"></i></a>
+                  </span>
+                            </ng-form>
+                        </div>
+                    </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="cardTitle">Details</label>
+
+            <div class="controls">
+                <div class="input-group">
+                    <div class="form-control cardDetails cardInputs" ng-show="!editingDetails" ng-bind-html="card.details|linky|cardDetails"></div>
+                    <textarea id="details" ng-model="card.details" class="cardInputs form-control" rows="7" ng-show="editingDetails"></textarea>
+                    <span class="input-group-btn">
+                      <a title="OK" ng-click="editingDetails = false" ng-hide="!editingDetails" class="btn btn-default"><i class="glyphicon glyphicon-ok"></i></a>
+                      <a title="Edit card details" ng-click="editingDetails = true" ng-hide="editingDetails" class="btn btn-default"><i class="glyphicon glyphicon-pencil"></i></a>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Card color</label>
+        </div>
+        <div class="form-group">
+            <color-selector options="colorOptions" ng-model="card.color" prefix="editCardColor" class="colorSelector" show-hex-code="true" />
+        </div>
+        </form>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+        </mpk-modal>
     </div>
-</section>
+    </div>
+
+    <div ng-controller="NewKanbanController">
+        <mpk-modal title="New Kanban board" visible="showNewKanban">
+            <form class="noMargin" name="newKanbanForm">
+                <div class="form-group">
+                    <label class="control-label" for="kanbanNameFormField">Kanban name</label>
+                    <div>
+                        <input type="text" id="kanbanNameFormField" placeholder="Kanban name" class="form-control" ng-model="model.kanbanName" required focus-me />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="numberOfColumnsField">Number of columns</label>
+                    <div>
+                        <select id="numberOfColumnsField" ng-model="model.numberOfColumns" class="form-control" ng-options="number for number in [2,3,4,5,6,7,8,9]">
+                        </select>
+                    </div>
+                </div>
+                <hr />
+                <div class="form-group">
+                    <label for="fromTemplate">Use existing Kanban as template</label>
+                    <div>
+                        <select id="fromTemplate" name="fromTemplate" ng-model="model.useTemplate" ng-options="name for name in model.kanbanNames" class="form-control">
+                            <option>Existing kanbans ...</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="alert alert-info">
+                    <p>When using existing Kanban as template, <strong>number of columns</strong> and respective <strong>names</strong> will be used.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" ng-click="createNew()">Create new</button>
+                </div>
+            </form>
+        </mpk-modal>
+    </div>
+
+    <!-- THIS IS THE HELP -->
+    <mpk-modal title="Help" visible="showHelp" modal-style="width:90%">
+        <p><span class="version">My Personal Kanban Version: @version@</span> from <a href="http://greggigon.github.io/my-personal-kanban/" target="blank">http://greggigon.github.io/my-personal-kanban/</a></p>
+        <p>
+            <strong>Personal Kanban</strong><br />
+            <small>You can create <strong>new Kanban</strong> by selecting <strong>Kanban -> New</strong> from the Kanban menu. You can give it a name and select number of columns. You can also choose existing Kanban as a template for the new one.<br/>
+                Once Kanban is created you can <strong>rename</strong> it by <strong>clicking it's title</strong> in the top bar. You can add new cards to the columns by pressing <strong>&plus;</strong> in the top right of the column. <br />
+                You can give each <strong>column name</strong> and change it's colour by selecting <strong>Column settings icon</strong> next to it's name. <strong>(Number)</strong> next to column name indicates number of cards in the column.<br /><br />
+                <strong>Cards are created</strong> with <strong>title</strong> and possible longer <strong>description</strong>. You can also <strong>select different colour</strong> for the card if you would like to categorize them somehow. Description will <strong>keep the new line formating</strong> and add <strong>clickable links</strong> if you include any. <br />
+                You can <strong>open Card details</strong> by clicking on <strong>card title</strong>.You can <strong>edit Card details</strong> once opened.<br />
+                You can <strong>drag card between columns</strong> and move them <strong>up and down</strong> column list.<br /><br />
+                You can have <strong>multiple Kanbans</strong> and open/switch them from the <strong>Switch to ...</strong> dropdown, next to <strong>Cloud Menu</strong>. <br />
+                You can <strong>select different style</strong> of Kanban board from <strong>Kanban -> Theme</strong> menu.<br />
+                You can <strong>delete</strong> entire Kanban by selecting <strong>Kanban -> Delete</strong> from the menu.<br />
+                Your Kanbans are automatically <strong>saved</strong> in your <strong>browser storage</strong>. <br /><br />
+                If card is in the last colum you can Archive it. It will remove it from a Column but keep in Kanban. You can review
+                your archived Cards via <strong>Kanban -> Archives</strong> menu. <br />
+                You can also un-archive cards from Archive and permamently remove them.<br /><br />
+                You can <strong>Export</strong> one or all Kanbans by selecting <strong>Kanban -> Export</strong> menu.<br />
+                You can <strong>Import</strong> Kanban(s) from a JSON file. <strong>Not that Kanban with existing name, same as imported one will be replaced with the content of the new one.</strong><br /><br />
+            </small>
+        </p>
+        <p>
+            <strong>Cloud</strong><br />
+            <small>
+                You can use <strong>My Personal Kanban Cloud</strong> service that enables <strong>Upload and Download</strong> from Cloud. This service is offered free of charge. <br />
+                You will need to create your <strong>cloud Kanban key</strong>. Follow instructions on <strong>Cloud -> Setup</strong>.<br />
+                Your Kanban in the Cloud <strong>is stored Encrypted</strong>, that's why you should setup <strong>Encryption Key</strong>. The Encryption algorithm is <a href="http://en.wikipedia.org/wiki/Rabbit_(cipher)" target="blank" title="Rabbit encryption algorithm">Rabbit</a>.<br />
+                You can <strong>upload Kanban</strong> by selecting <strong>Cloud -> Upload</strong> from the menu <br />.
+                You can <strong>download Kanban</strong> by selecting <strong>Cloud -> Download</strong> from the menu. <br /><br />
+                You can also use your own Local Cloud. There is server implementation provided at: <a href="https://github.com/greggigon/my-personal-kanban-server" target="blank">https://github.com/greggigon/my-personal-kanban-server</a>. Just select the option and provide URL for the Local Cloud service <strong>Cloud -> Setup -> Use own Local Cloud</strong>.
+            </small>
+        </p>
+    </mpk-modal>
+

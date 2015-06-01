@@ -4,6 +4,17 @@
 angular.module('core').controller('HomeController', ['$scope', 'Authentication','$timeout',
 	function($scope, Authentication, $timeout) {
 		// This provides Authentication context.
+
+        $scope.dragInit = (function() {
+            $( "#draggable" ).draggable();
+            $( "#droppable" ).droppable({
+                drop: function( event, ui ) {
+                    $( this )
+                        .addClass( "ui-state-highlight" );
+                }
+            });
+        });
+
 		$scope.authentication = Authentication;
 
         $scope.list1 = [

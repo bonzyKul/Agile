@@ -14,371 +14,126 @@
 	border-color: #78FA89;
 }
 
-.thumbnail { height: 280px !important; }
-.btn-droppable { width: 180px; height: 30px; padding-left: 4px; }
-.btn-draggable { width: 160px; }
+/*kanban css*/
 
+a { cursor: pointer; }
+#kanbanName a { color: #ddd; }
+div.navbar-header form div.input-group { margin-top: 7px;}
+.cardInputs { width: 450px; color: #555555; }
+#quickSwitch { padding: 15px 10px; margin-bottom: 0px;}
 
-img {
-    vertical-align: middle;
-}
-
-.img-responsive {
-    display: block;
-    height: auto;
-    max-width: 100%;
-}
-
-.img-rounded {
-    border-radius: 3px;
-}
-
-.img-thumbnail {
-    background-color: #fff;
-    border: 1px solid #ededf0;
-    border-radius: 3px;
-    display: inline-block;
-    height: auto;
-    line-height: 1.428571429;
-    max-width: 100%;
-    moz-transition: all .2s ease-in-out;
-    o-transition: all .2s ease-in-out;
-    padding: 2px;
-    transition: all .2s ease-in-out;
-    webkit-transition: all .2s ease-in-out;
-}
-
-.img-circle {
-    border-radius: 50%;
-}
-
-.kanban-centered {
-    position: relative;
-    margin-bottom: 30px;
-}
-
-.kanban-centered:before, .kanban-centered:after {
-    content: " ";
-    display: table;
-}
-
-.kanban-centered:after {
-    clear: both;
-}
-
-.kanban-centered:before, .kanban-centered:after {
-    content: " ";
-    display: table;
-}
-
-.kanban-centered:after {
-    clear: both;
-}
-
-.kanban-centered:before {
-    content: '';
-    position: absolute;
-    display: block;
-    width: 2px;
-    /*background: #f5f5f6;*/
-    top: 20px;
-    bottom: 20px;
-    /*margin-left: 18px;*/
-}
-
-.kanban-centered .kanban-entry {
-    position: relative;
-    /*width: 50%;
-    float: right;*/
-    margin: 10px 8px;
-    clear: both;
-    border-radius: 4px;
-    -webkit-box-shadow: 1px 1px 2px 0 rgba(50, 50, 50, 0.5);
-    -moz-box-shadow: 1px 1px 2px 0 rgba(50, 50, 50, 0.5);
-    box-shadow: 1px 1px 2px 0 rgba(50, 50, 50, 0.5);
-}
-
-.kanban-centered .kanban-entry:before, .kanban-centered .kanban-entry:after {
-    content: " ";
-    display: table;
-}
-
-.kanban-centered .kanban-entry:after {
-    clear: both;
-}
-
-.kanban-centered .kanban-entry:before, .kanban-centered .kanban-entry:after {
-    content: " ";
-    display: table;
-}
-
-.kanban-centered .kanban-entry:after {
-    clear: both;
-}
-
-.kanban-centered .kanban-entry.begin {
-    margin-bottom: 0;
-}
-
-.kanban-centered .kanban-entry.left-aligned {
-    float: left;
-}
-
-.kanban-centered .kanban-entry.left-aligned .kanban-entry-inner {
-    margin-left: 0;
-    margin-right: -18px;
-}
-
-.kanban-centered .kanban-entry.left-aligned .kanban-entry-inner .kanban-time {
-    left: auto;
-    right: -100px;
-    text-align: left;
-}
-
-.kanban-centered .kanban-entry.left-aligned .kanban-entry-inner .kanban-icon {
-    float: right;
-}
-
-.kanban-centered .kanban-entry.left-aligned .kanban-entry-inner .kanban-label {
-    margin-left: 0;
-    margin-right: 70px;
-}
-
-.kanban-centered .kanban-entry.left-aligned .kanban-entry-inner .kanban-label:after {
-    left: auto;
-    right: 0;
-    margin-left: 0;
-    margin-right: -9px;
-    -moz-transform: rotate(180deg);
-    -o-transform: rotate(180deg);
-    -webkit-transform: rotate(180deg);
-    -ms-transform: rotate(180deg);
-    transform: rotate(180deg);
-}
-
-.kanban-centered .kanban-entry .kanban-entry-inner {
-    position: relative;
-    /*margin-left: -24px;*/
-}
-
-.kanban-centered .kanban-entry .kanban-entry-inner:before, .kanban-centered .kanban-entry .kanban-entry-inner:after {
-    content: " ";
-    display: table;
-}
-
-.kanban-centered .kanban-entry .kanban-entry-inner:after {
-    clear: both;
-}
-
-.kanban-centered .kanban-entry .kanban-entry-inner:before, .kanban-centered .kanban-entry .kanban-entry-inner:after {
-    content: " ";
-    display: table;
-}
-
-.kanban-centered .kanban-entry .kanban-entry-inner:after {
-    clear: both;
-}
-
-.kanban-centered .kanban-entry .kanban-entry-inner .kanban-time {
-    position: absolute;
-    left: -100px;
-    text-align: right;
-    padding: 10px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-.kanban-centered .kanban-entry .kanban-entry-inner .kanban-time > span {
-    display: block;
-}
-
-.kanban-centered .kanban-entry .kanban-entry-inner .kanban-time > span:first-child {
-    font-size: 15px;
-    font-weight: bold;
-}
-
-.kanban-centered .kanban-entry .kanban-entry-inner .kanban-time > span:last-child {
-    font-size: 12px;
-}
-
-.kanban-centered .kanban-entry .kanban-entry-inner .kanban-icon {
-    background: #fff;
-    color: #737881;
-    display: block;
-    width: 25px;
-    height: 25px;
-    -webkit-background-clip: padding-box;
-    -moz-background-clip: padding;
-    background-clip: padding-box;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    border-radius: 20px;
-    text-align: center;
-    -moz-box-shadow: 0 0 0 4px #f5f5f6;
-    -webkit-box-shadow: 0 0 0 4px #f5f5f6;
-    box-shadow: 0 0 0 4px #f5f5f6;
-    float: left;
-    margin-top: 6px;
-}
-
-.kanban-centered .kanban-entry .kanban-entry-inner .kanban-icon.bg-primary {
-    background-color: #303641;
-    color: #fff;
-}
-
-.kanban-centered .kanban-entry .kanban-entry-inner .kanban-icon.bg-secondary {
-    background-color: #ee4749;
-    color: #fff;
-}
-
-.kanban-centered .kanban-entry .kanban-entry-inner .kanban-icon.bg-success {
-    background-color: #00a651;
-    color: #fff;
-}
-
-.kanban-centered .kanban-entry .kanban-entry-inner .kanban-icon.bg-info {
-    background-color: #21a9e1;
-    color: #fff;
-}
-
-.kanban-centered .kanban-entry .kanban-entry-inner .kanban-icon.bg-warning {
-    background-color: #fad839;
-    color: #fff;
-}
-
-.kanban-centered .kanban-entry .kanban-entry-inner .kanban-icon.bg-danger {
-    background-color: #cc2424;
-    color: #fff;
-}
-
-.kanban-centered .kanban-entry .kanban-entry-inner .kanban-label {
-    position: relative;
-    background: #f5f5f6;
-    padding: 0.75em;
-    /*margin-left: 50px;*/
-    -webkit-background-clip: padding-box;
-    -moz-background-clip: padding;
-    background-clip: padding-box;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-}
-
-/*.kanban-centered .kanban-entry .kanban-entry-inner .kanban-label:after {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 9px 9px 9px 0;
-    border-color: transparent #f5f5f6 transparent transparent;
-    left: 0;
-    top: 10px;
-    margin-left: -9px;
-}*/
-
-.kanban-centered .kanban-entry .kanban-entry-inner .kanban-label h2, .kanban-centered .kanban-entry .kanban-entry-inner .kanban-label p {
-    color: #737881;
-    font-family: "Noto Sans",sans-serif;
-    font-size: 12px;
-    margin: 0;
-    line-height: 1.428571429;
-}
-
-.kanban-centered .kanban-entry .kanban-entry-inner .kanban-label p + p {
-    margin-top: 15px;
-}
-
-.kanban-centered .kanban-entry .kanban-entry-inner .kanban-label h2 {
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-
-.kanban-centered .kanban-entry .kanban-entry-inner .kanban-label h2 a {
-    color: #303641;
-}
-
-.kanban-centered .kanban-entry .kanban-entry-inner .kanban-label h2 span {
-    -webkit-opacity: .6;
-    -moz-opacity: .6;
-    opacity: .6;
-    -ms-filter: alpha(opacity=60);
-    filter: alpha(opacity=60);
-}
-
-
-.modal-static {
-    position: fixed;
-    top: 50% !important;
-    left: 50% !important;
-    margin-top: -100px;
-    margin-left: -100px;
-    overflow: visible !important;
-}
-
-.modal-static,
-.modal-static .modal-dialog,
-.modal-static .modal-content {
-    width: 200px;
+.cardDetails {
+    border: 1px solid #CCCCCC;
+    padding: 4px 6px;
     height: 150px;
+    margin-bottom: 0px;
+    overflow: auto;
+    background-color: #eeeeee;
 }
 
-.modal-static .modal-dialog,
-.modal-static .modal-content {
-    padding: 0 !important;
-    margin: 0 !important;
+input.kanbanKey {
+    width: 98%;
+    color: #555555;
+    font-weight: bold;
+    padding-right: 0px;
+    font-size: 1.5em;
 }
 
-.kanban-col {
-    width: 300px;
-    margin-right: 20px;
-    float: left;
+.cards, .cards-no-sort { padding: 0px; margin: 0px; clear: both; overflow: scroll;}
+.card { white-space: normal;}
+#info {
+    padding: 10px 15px;
+    color: #8a8a8a;
+    margin-right: 30px;
 }
 
-.panel-body {
-    padding: 15px 0 0 0;
-    overflow-y: auto;
+#info .spinner { padding: 10px 15px; left: 0px;}
+#info .error { color: #FF9E9E;}
+#info #error a { color: #FF9E9E;}
+
+#message { float: left; }
+
+.colorBox { cursor: pointer; }
+
+.shortcut { color: #aaa; padding-top: 2px;}
+
+div.help > div.modal-dialog { width: 90%; }
+div.help div.modal-body { overflow: scroll;}
+.version { color: #aaa; }
+
+div.archive > div.modal-dialog { width: 90%; }
+
+.modal-footer { padding-left: 0px; padding-right: 0px;}
+
+
+/*dark theme */
+
+/* Bootstrap overrides */
+div.navbar-header a { color: #444; }
+.noDisplay { display: none; }
+.error { border-color: red;}
+a { padding-left: 2px; padding-right: 2px;}
+.navbar { background-image: linear-gradient(to bottom, #333, #111); }
+.navbar .navbar-brand { text-shadow: none; color: #ddd;}
+.navbar-nav > li > a { text-shadow: none; color: #ddd; }
+.navbar-nav > li > a:hover, .navbar-nav > li > a:focus { color: #fff; background-color: #000;}
+.nav > li > a:focus { color: #fff; background-color: #000;}
+
+body { background-color: #bbb; }
+
+#kanban { margin: 0px; padding: 0px 10px 0 10px;}
+#columns { margin: 55px 0px 0px 0px;}
+#columns > div { padding-left: 5px; padding-right:5px;}
+
+.card {
+    padding: 10px;
+    font-weight: 200;
+
+    border: solid 1px #555;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    list-style: none;
+
+    -webkit-box-shadow: inset rgba(0, 0, 0, 0.35) 0px 2px 10px 0px;
+    box-shadow: inset rgba(0, 0, 0, 0.35) 0px 2px 10px 0px;
+    margin: 2px;
+    cursor: move;
+}
+.cards { margin: 0px; overflow:auto;}
+.card a { color: #444; }
+.card a:hover { text-decoration: none; cursor: pointer; color: #777;}
+
+.column {
+    border: solid 1px #444;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+
+    background-color: #666;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.7) 0px 1px 10px 0px;
+    box-shadow: rgba(0, 0, 0, 0.7) 0px 1px 10px 0px;
+}
+.column a { color: #444; }
+
+.columnHeader {
+    margin: 10px 0px;
+    padding: 0px 3px;
+    font-size: 15px;
+    color: #fff;
 }
 
-
-
-/*.panel-heading {
-    cursor: -moz-grab;
-    cursor: -webkit-grab;
-    cursor: grab;
-}*/
-
-.grab {
-    cursor: -moz-grab;
-    cursor: -webkit-grab;
+.noMargin { margin-bottom: 0px;}
+.colorBox {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    border: 1px solid black;
+    margin: 2px;
 }
 
-.grabbing {
-    cursor: -moz-grabbing;
-    cursor: -webkit-grabbing;
+.colorSelector .selected {
+    border: 2px solid red;
 }
 
-.panel-heading {
-    cursor: context-menu;
-}
-
-.panel-heading i {
-    cursor: pointer;
-}
-
-
-
-
-
-
-body {
-    -webkit-user-select: none; /* Chrome/Safari */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+ */
-    /* Rules below not implemented in browsers yet */
-    -o-user-select: none;
-    user-select: none;
-}
 
